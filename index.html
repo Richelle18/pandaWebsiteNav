@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drop Down Menu</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="navbar">
+          <div class="logo">
+            <img src="img/logo.png" alt="logo" />
+          </div>
+
+          <div class="navbar-title">
+            <ul class="main-ul">
+              <li><a href="#">Home</a></li>
+
+              <li class="main-li">
+                <a href="#">Features<span class="collapse-menu">></span></a>
+                <div>
+                  <ul class="submenu-1">
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Element</a></li>
+                    <li><a href="#">Icons</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="main-li">
+                <a href="#">Services <span class="collapse-menu">></span></a>
+                <div>
+                  <ul class="submenu-1">
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Apply Design</a></li>
+                    <li id="submenu-li-2">
+                      <a href="#">More <span class="collapse-menu">></span></a>
+                      <div>
+                        <ul class="submenu-2">
+                          <li><a href="#">Submenu-1</a></li>
+                          <li><a href="#">Submenu-2</a></li>
+                          <li><a href="#">Submenu-3</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="toggle-button">
+          <span><i class="bx bx-menu"></i></span>
+        </div>
+      </nav>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

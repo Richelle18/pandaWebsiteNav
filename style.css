@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --nav-font-color: #666551ff;
+  --hover-link: rgb(231, 114, 60);
+  --active-hover-li: #873c16ff;
+  --box-shadow: #a88756ff;
+  --ebony-2: rgb(94, 131, 90);
+  --copper: #a7733eff;
+  --nav-bg-color: #fff;
+}
+body {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.1)
+    ),
+    url(img/bg.png);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+}
+
+.container nav {
+  background-color: var(--nav-bg-color);
+  box-shadow: 0px 5px 15px -1px var(--box-shadow);
+}
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+.logo {
+  max-width: 100px;
+  margin: 10px 0px;
+}
+.main-ul {
+  display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.main-ul.clicked {
+  display: flex;
+}
+div > ul {
+  list-style: none;
+}
+.main-ul li {
+  width: 100%;
+  text-align: center;
+}
+.main-ul > li {
+  margin-top: 10px;
+  margin-bottom: 3px;
+  border-bottom: 1px dotted #ccc;
+  position: relative;
+}
+
+.main-ul > li:last-child {
+  border-bottom: none;
+}
+.main-ul li a {
+  display: block;
+  text-align: start;
+  width: 100%;
+  color: var(--nav-font-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  padding-left: 40%;
+  line-height: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.main-ul li a:hover {
+  color: var(--hover-link);
+  /* background-color: var(--active-hover-li); */
+  border-radius: 5px;
+}
+.main-li div .submenu-1.clicked {
+  display: block;
+}
+.main-li div .submenu-1:last-child {
+  margin-bottom: 10px;
+}
+.main-li div .submenu-1 li a {
+  font-size: 1rem;
+  line-height: 10px;
+  padding-left: 45%;
+  margin-bottom: 10px;
+}
+.main-li div .submenu-1 .submenu-2.clicked {
+  display: block;
+}
+.main-li div .submenu-1 .submenu-2 li a {
+  padding-left: 50%;
+}
+.main-li div .submenu-1 .submenu-2 li:first-child {
+  margin-top: 20px;
+}
+
+.collapse-menu {
+  display: block;
+  font-size: 1.7rem;
+  position: absolute;
+  margin-top: -30px;
+  margin-left: 100px;
+}
+
+.collapse-menu.clicked {
+  transform: rotate(90deg);
+
+  /* transition: all 0.1s ease; */
+}
+.submenu-1:last-child .collapse-menu {
+  padding: 10px 0;
+  margin-top: -20px;
+  margin-left: 55px;
+}
+.main-li div .submenu-1 {
+  display: none;
+}
+
+.main-li div .submenu-1 .submenu-2 {
+  display: none;
+}
+
+nav .toggle-button {
+  position: absolute;
+  font-size: 30px;
+  top: 20px;
+  right: 10%;
+}
+
+/* --------------media query--------------- */
+@media screen and (min-width: 880px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+  }
+  .main-ul {
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+  }
+  .main-ul li {
+    width: fit-content;
+    text-align: center;
+  }
+  .main-ul > li {
+    border-bottom: none;
+  }
+  .main-ul li a {
+    display: block;
+    text-align: center;
+    width: fit-content;
+    padding: 20px 25px;
+    line-height: 30px;
+  }
+
+  .main-ul .main-li:hover div .submenu-1 {
+    display: block;
+    white-space: nowrap;
+    background-color: var(--nav-bg-color);
+    padding: 10px 15px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+  }
+  .main-ul .main-li:hover div .submenu-1 li a {
+    padding: 10px 10px;
+    text-align: left;
+    width: 130px;
+  }
+
+  .main-ul .main-li div .submenu-1 li:hover .submenu-2 {
+    display: block;
+    background-color: var(--nav-bg-color);
+    padding: 10px 15px;
+    position: absolute;
+    margin-top: -45px;
+    left: 110px;
+  }
+  .main-ul .main-li div .submenu-1 li:hover .submenu-2 li a {
+    padding-left: 0;
+  }
+
+  .collapse-menu {
+    display: none;
+  }
+  nav .toggle-button {
+    display: none;
+  }
+}
